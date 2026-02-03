@@ -4,7 +4,7 @@
     "dockerfile": "Dockerfile"
   },
 
-  "postStartCommand": "nohup bash .devcontainer/start-vnc.sh > /tmp/vnc.log 2>&1 &",
+  "postStartCommand": "bash .devcontainer/start-vnc.sh",
 
   "forwardPorts": [5901, 6080],
 
@@ -34,7 +34,12 @@
     }
   },
 
-  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "runArgs": [
+    "--cap-add=SYS_PTRACE", 
+    "--security-opt", "seccomp=unconfined",
+    "-e", "DISPLAY=${localEnv:DISPLAY}",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+  ],
 
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
