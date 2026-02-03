@@ -18,6 +18,7 @@ This workspace includes a complete devcontainer setup with XFCE desktop environm
 ## Accessing the Desktop
 
 ### Option 1: Web Browser (noVNC)
+
 1. After the container starts, run the VNC start script:
    ```bash
    ./.devcontainer/start-vnc.sh
@@ -26,6 +27,7 @@ This workspace includes a complete devcontainer setup with XFCE desktop environm
 3. Click "Connect" and enter password: `vscode`
 
 ### Option 2: VNC Client
+
 1. Run the VNC start script:
    ```bash
    ./.devcontainer/start-vnc.sh
@@ -51,6 +53,7 @@ sudo apt install <package-name>
 ## Stopping VNC
 
 To stop the VNC server:
+
 ```bash
 vncserver -kill :1
 ```
