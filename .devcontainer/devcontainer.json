@@ -6,8 +6,6 @@
 
   "postCreateCommand": "chmod +x .devcontainer/start-vnc.sh && .devcontainer/start-vnc.sh",
 
-  "postStartCommand": "sleep 2 && code --open-url 'http://localhost:6080/vnc.html?autoconnect=true&password=vscode'",
-
   "forwardPorts": [5901, 6080],
 
   "portsAttributes": {
