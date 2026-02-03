@@ -4,7 +4,7 @@
     "dockerfile": "Dockerfile"
   },
 
-  "postCreateCommand": "chmod +x .devcontainer/start-vnc.sh && .devcontainer/start-vnc.sh",
+  "postStartCommand": "nohup bash .devcontainer/start-vnc.sh > /tmp/vnc.log 2>&1 &",
 
   "forwardPorts": [5901, 6080],
 
