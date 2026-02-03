@@ -33,6 +33,13 @@ RUN apt-get update && apt-get install -y \
     chromium \
     && rm -rf /var/lib/apt/lists/*
 
+# Install lvce editor
+RUN wget https://github.com/lvce-editor/lvce-editor/releases/download/v0.71.15/lvce-v0.71.15_amd64.deb \
+    && dpkg -i lvce-v0.71.15_amd64.deb || true \
+    && apt-get update && apt-get install -f -y \
+    && rm lvce-v0.71.15_amd64.deb \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set up VNC
 RUN mkdir -p /home/$USERNAME/.vnc \
     && echo "vscode" | vncpasswd -f > /home/$USERNAME/.vnc/passwd \
