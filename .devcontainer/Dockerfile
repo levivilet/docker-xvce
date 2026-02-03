@@ -57,6 +57,15 @@ exec startxfce4' > /home/$USERNAME/.vnc/xstartup \
     && chmod +x /home/$USERNAME/.vnc/xstartup \
     && chown $USERNAME:$USERNAME /home/$USERNAME/.vnc/xstartup
 
+# Copy lvce editor desktop shortcut from package to Desktop
+RUN mkdir -p /home/$USERNAME/Desktop \
+    && cp /usr/share/applications/lvce-editor.desktop /home/$USERNAME/Desktop/ \
+    && chmod +x /home/$USERNAME/Desktop/lvce-editor.desktop \
+    && chown -R $USERNAME:$USERNAME /home/$USERNAME/Desktop
+
+# Mark desktop file as trusted for XFCE
+RUN su - $USERNAME -c "gio set /home/$USERNAME/Desktop/lvce-editor.desktop metadata::trusted true" || true
+
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
