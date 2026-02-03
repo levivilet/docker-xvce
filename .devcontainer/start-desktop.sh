@@ -9,7 +9,7 @@ sleep 2
 
 # Start VNC server
 echo "Starting VNC server..."
-vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901 -SecurityTypes None
+vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901 -SecurityTypes None -dpi 96
 
 # Wait for VNC to be ready
 sleep 3
