@@ -37,7 +37,7 @@ fi
 
 if pgrep -f "websockify" > /dev/null; then
     echo "✓ noVNC web interface available on port 6080"
-    echo "  Open: http://localhost:6080/vnc.html"
+    echo "  Open: http://localhost:6080/"
 else
     echo "✗ noVNC/websockify failed to start"
     exit 1

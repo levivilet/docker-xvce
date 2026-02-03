@@ -55,6 +55,9 @@ exec startxfce4' > /home/$USERNAME/.vnc/xstartup \
     && chmod +x /home/$USERNAME/.vnc/xstartup \
     && chown $USERNAME:$USERNAME /home/$USERNAME/.vnc/xstartup
 
+# Copy custom noVNC index page with resize=remote as default
+COPY index.html /usr/share/novnc/index.html
+
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
