@@ -9,7 +9,7 @@ sleep 2
 
 # Start VNC server
 echo "Starting VNC server..."
-vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901
+vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901 -SecurityTypes None
 
 # Wait for VNC to be ready
 sleep 3
@@ -44,5 +44,4 @@ else
 fi
 
 echo ""
-echo "VNC password: vscode"
 echo "To stop: vncserver -kill :1 && pkill websockify"

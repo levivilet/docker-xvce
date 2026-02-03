@@ -24,7 +24,7 @@ This workspace includes a complete devcontainer setup with XFCE desktop environm
    ./.devcontainer/start-vnc.sh
    ```
 2. Open your browser to `http://localhost:6080`
-3. Click "Connect" and enter password: `vscode`
+3. Click "Connect" (no password required)
 
 ### Option 2: VNC Client
 
@@ -32,8 +32,7 @@ This workspace includes a complete devcontainer setup with XFCE desktop environm
    ```bash
    ./.devcontainer/start-vnc.sh
    ```
-2. Connect your VNC client to `localhost:5901`
-3. Use password: `vscode`
+2. Connect your VNC client to `localhost:5901` (no password required)
 
 ## Installing Packages
 
@@ -46,7 +45,7 @@ sudo apt install <package-name>
 
 ## Configuration
 
-- **VNC Password**: `vscode` (change in [.devcontainer/Dockerfile](.devcontainer/Dockerfile))
+- **VNC Password**: None (disabled for convenience)
 - **Screen Resolution**: 1920x1080 (change in [.devcontainer/start-vnc.sh](.devcontainer/start-vnc.sh))
 - **Ports**: 5901 (VNC), 6080 (noVNC web)
 

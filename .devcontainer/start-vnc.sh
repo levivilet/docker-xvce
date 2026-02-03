@@ -10,7 +10,7 @@ sleep 1
 
 # Start VNC server
 echo "[$(date)] Starting VNC server..." | tee -a /tmp/vnc.log
-vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901 2>&1 | tee -a /tmp/vnc.log
+vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -rfbport 5901 -SecurityTypes None 2>&1 | tee -a /tmp/vnc.log
 
 # Wait for VNC to be ready
 sleep 2
@@ -34,7 +34,6 @@ sleep 1
 if pgrep -f "websockify" > /dev/null; then
     echo "[$(date)] ✓ VNC server started on :1 (port 5901)" | tee -a /tmp/vnc.log
     echo "[$(date)] ✓ noVNC web interface available on port 6080" | tee -a /tmp/vnc.log
-    echo "[$(date)] ✓ VNC password: vscode" | tee -a /tmp/vnc.log
     echo "[$(date)] Open: http://localhost:6080/vnc.html" | tee -a /tmp/vnc.log
 else
     echo "[$(date)] WARNING: websockify may not have started" | tee -a /tmp/vnc.log
