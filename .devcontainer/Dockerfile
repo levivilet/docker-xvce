@@ -1,5 +1,8 @@
 FROM debian:bookworm
 
+# lvce-editor version
+ARG LVCE_VERSION=0.71.16
+
 # Install essential packages
 RUN apt-get update && apt-get install -y \
     sudo \
@@ -34,10 +37,10 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install lvce editor
-RUN wget https://github.com/lvce-editor/lvce-editor/releases/download/v0.71.15/lvce-v0.71.15_amd64.deb \
-    && dpkg -i lvce-v0.71.15_amd64.deb || true \
+RUN wget https://github.com/lvce-editor/lvce-editor/releases/download/v${LVCE_VERSION}/lvce-v${LVCE_VERSION}_amd64.deb \
+    && dpkg -i lvce-v${LVCE_VERSION}_amd64.deb || true \
     && apt-get update && apt-get install -f -y \
-    && rm lvce-v0.71.15_amd64.deb \
+    && rm lvce-v${LVCE_VERSION}_amd64.deb \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up VNC
