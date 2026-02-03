@@ -29,6 +29,8 @@ RUN apt-get update && apt-get install -y \
     websockify \
     x11-utils \
     xterm \
+    firefox-esr \
+    chromium \
     && rm -rf /var/lib/apt/lists/*
 
 # Set up VNC
